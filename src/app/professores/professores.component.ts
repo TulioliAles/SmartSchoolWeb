@@ -7,14 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessoresComponent implements OnInit {
 
-  titulo = 'Professores'
+  public titulo = 'Professores';
+  public profSelecionado: string;
 
-  public prof= [
-    {nome: 'Daniele'},
-    {nome: 'Fernando'},
-    {nome: 'Joaquim'},
-    {nome: 'Paulo'}
+  public prof = [
+    {id:1, nome: 'Daniele', disciplina: 'Engenharia'},
+    {id:2, nome: 'Fernando', disciplina: 'POO'},
+    {id:3, nome: 'Joaquim', disciplina: 'Linux'},
+    {id:4, nome: 'Paulo', disciplina: 'SQL'},
   ]
+
+  profSelect(prof: any){
+    this.profSelecionado = prof.nome;
+  }
+
+  voltar(){
+    this.profSelecionado = '';
+  }
 
   constructor() { }
 
